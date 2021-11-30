@@ -24,3 +24,14 @@ buildCarメソッドでは、Car型クラスを継承した各国のCarクラス
 実装例では、HouseBuilderインターフェイスを継承し、IglooHouseBuilderクラスとTipiHouseBuilderクラスを作成し具体的なメソッドを実装。
 IglooHouseBuilderのインスタンスを作成し、CivilEngineerクラスに引数として渡し、engineerインスタンスを作成。CivilEngineerクラスの引数は汎化されたHouseBuilder型なので、HouseBuilderを継承しているクラスであれば受け取ることができる（？）。
 constructHouseメソッドでhouseBuilderインスタンスのbuild*メソッドを呼び出している。
+
+
+## Factory method
+
+[https://ja.wikipedia.org/wiki/Factory_Method_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3](https://ja.wikipedia.org/wiki/Factory_Method_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)
+
+他のクラスのコンストラクタをサブクラスで上書き可能な自分のメソッドに書き換えることでアプリケーションに特化したオブジェクトの生成をサブクラスに追い出し、クラスの再利用性を高める
+
+実装例では、各NotificationクラスはNotificationインターフェイスを継承。
+NotificationFactoryのcreateNotificationメソッドで引数に応じて各NotificationインスタンスをNotification型で作成。
+Notification型なのでNotificationインターフェイスを継承しているクラスであれば、notifyUserメソッドを呼び出すことができる。
